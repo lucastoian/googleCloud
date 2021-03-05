@@ -1,4 +1,5 @@
 <?php
+phpinfo();
 $connection = "host=34.65.31.3 dbname=postgres user=postgres password=Azorel12";
 $db = pg_connect($connection);
 ?>
