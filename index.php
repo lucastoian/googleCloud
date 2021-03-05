@@ -1,6 +1,6 @@
 <?php
-$dsn = 'pgsql:host=34.65.31.3 port=5432 dbname=postgres user=postgres password=Azorel12';
-$db = new PDO($dsn);
+$connection = "host=34.65.31.3 dbname=postgres user=postgres password=Azorel12";
+$db = pg_connect($connection);
 ?>
 <html>
     <head>
@@ -56,10 +56,12 @@ echo 'PHP version: ' . phpversion();
                 
                 $sql = "SELECT G.nome, G.img
                         FROM game AS G;";
+                $params = array();
+                $result = pg_prepare($db, "cmd", $sql);
+                $result = pg_execute($db, "cmd", $params);
+                $result = pg_fetch_all($result);
 
-               
-
-                foreach($db->query($sql) as $g){ ?>
+                foreach($result as $g){ ?>
                     <div>
                     <div class="uk-card uk-card-hover uk-card-secondary">
                         
