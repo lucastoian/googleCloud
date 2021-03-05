@@ -1,0 +1,12 @@
+runtime: php74
+
+env_variables:
+    GOOGLE_STORAGE_BUCKET: ""
+    # populate these to use the "mysql" or "postres" backends
+    CLOUDSQL_CONNECTION_NAME: "carbon-airfoil-306519:europe-west6:luca-test1"
+    CLOUDSQL_USER: "postgres"
+    CLOUDSQL_PASSWORD: "Azorel12"
+    ## Uncomment to give your database a name other than "bookshelf"
+    # CLOUDSQL_DATABASE_NAME: "
+
+
